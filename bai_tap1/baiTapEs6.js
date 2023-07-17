@@ -56,4 +56,30 @@ let coursesRating2 = courses.filter(function(courses){
 ]; 
 // task 3
 let newSumArray = [...courses,...addedCourses];
-console.log(newSumArray);
+                                                              console.log(newSumArray);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                                              

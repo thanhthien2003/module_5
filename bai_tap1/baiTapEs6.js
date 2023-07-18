@@ -34,10 +34,12 @@ console.log(coursesRating);
 let coursesRating2 = courses.filter(function(courses){
     return courses.rating < 4;
 });
- for(let i = 0; i<coursesRating2.length;i++){
-    console.log("['" + coursesRating2[i].id + " - " +coursesRating2[i].title + " - " +coursesRating2[i].rating + "']");
- };
- let addedCourses = [ 
+ coursesRating2.map((coursesRating2) =>{
+  console.log(coursesRating2.id +" - "+ coursesRating2.title +" - "+ coursesRating2.rating)
+ }
+ )
+// task 3
+let addedCourses = [ 
   { 
     id: 6, 
     title: "PHP Tutorial", 
@@ -54,32 +56,7 @@ let coursesRating2 = courses.filter(function(courses){
     rating: 3.8, 
   } 
 ]; 
-// task 3
-let newSumArray = [...courses,...addedCourses];
-                                                              console.log(newSumArray);
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-                                                              
+let newSumArray = (courses,addedCourses) => {
+  return [...courses,...addedCourses]
+}
+console.log(newSumArray(courses,addedCourses));                                                          

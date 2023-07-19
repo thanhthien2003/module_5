@@ -37,11 +37,24 @@ const students = [
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
-  students.map(student => (
-    <tr>
-      <td>{student.company}</td>
-      <td>{student.contact}</td>
-      <td>{student.country}</td>
-    </tr>
-  ))
+  <>
+    <h1>Information Of Student</h1>
+    <thead>
+      <tr>
+        <th>Company</th>
+        <th>Contact</th>
+        <th>Country</th>
+      </tr>
+    </thead>
+    <tbody>
+      {students.map((student, index) => (
+        <tr key={index}>
+          <td>{student.company}</td>
+          <td>{student.contact}</td>
+          <td>{student.country}</td>
+        </tr>
+      ))
+      }
+    </tbody>
+  </>
 )

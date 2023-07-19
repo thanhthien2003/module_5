@@ -29,16 +29,16 @@ class App extends React.Component {
   render() {
     return (
       <>
-        <div style={{ textAlign: 'center'}}>
+        <div style={{ textAlign: 'center' }}>
           <h1 className="text-body-tertiary">Todo List</h1>
           <div>
             <input value={this.state.item}
               onChange={(even) => this.handleChange(even.target.value)} />
             <button onClick={() => this.handleAddItem()}>ADD</button>
-            <table >
+            <table border={1}>
               <thead>
                 <tr>
-                  <th style={{ textAlign: 'center'}}>Todo
+                  <th>Todo
                   </th>
                 </tr>
               </thead>

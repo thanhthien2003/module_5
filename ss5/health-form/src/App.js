@@ -22,18 +22,18 @@ function App() {
         email: ""
       }}
         validationSchema={yup.object({
-          fullName: yup.string().required('Required'),
-          idCard: yup.string().required('Required'),
-          dateOfBirth: yup.number().required('Required').min(1900),
-          country: yup.string().required('Required'),
-          company: yup.string().required('Required'),
-          department: yup.string().required('Required'),
-          healthInsuranceCard: yup.string().required('Required'),
-          province: yup.string().required('Required'),
-          wards: yup.string().required('Required'),
-          numberOfHouses: yup.string().required('Required'),
-          phone: yup.string().required('Required'),
-          email: yup.string().required('Required').matches("^[A-Z0-9._%+-]+@[A-Z0-9.-]+[A-Z]{2,}$",'Địa chỉ email không hợp lệ')
+          fullName: yup.string().required('Tên không được để trống'),
+          idCard: yup.string().required('Idcard không được để trống'),
+          dateOfBirth: yup.number().required('Ngày sinh không được để trống').min(1900),
+          country: yup.string().required('Quốc gia không được để trống'),
+          company: yup.string().required('Công ty không được để trống'),
+          department: yup.string().required('Bộ phận làm việc không được để trống'),
+          healthInsuranceCard: yup.string().required('Bảo hiểm y tế không được để trống'),
+          province: yup.string().required('Tỉnh thành không được để trống'),
+          wards: yup.string().required('Quận huyện không được để trống'),
+          numberOfHouses: yup.string().required('Số nhà không được để trống'),
+          phone: yup.string().required('Số điện thoại không được để trống'),
+          email: yup.string().required('Email không được để trống').matches("^[A-Z0-9._%+-]+@[A-Z0-9.-]+[A-Z]{2,}$",'Địa chỉ email không hợp lệ')
         })}
 
       >
@@ -54,7 +54,6 @@ function App() {
             <ErrorMessage component="div" name='dateOfBirth' className='text-red' />
           </div>
           <div>
-            <span>Giới tính :</span>
             <label className='gender' htmlFor='male'>Nam</label>
             <Field type='radio' id='male' name='gender' value="male" />
             <label className='gender' htmlFor='female'>Nữ</label>

@@ -60,4 +60,4 @@ let addedCourses = [
 let generalCourse = (courses,addedCourses) => {
   return [...courses,...addedCourses]
 }
-console.log(newSumArray(courses,addedCourses));                                                          
+console.log(generalCourse(courses,addedCourses));

@@ -26,7 +26,7 @@ let courses = [
   }, 
 ];
 // task 1
-let coursesRating = courses.filter(function(courses){
+let coursesRating = courses.filter((courses)=>{
     return courses.rating >= 4; 
 });
 console.log(coursesRating);
@@ -34,9 +34,10 @@ console.log(coursesRating);
 let coursesRating2 = courses.filter(function(courses){
     return courses.rating < 4;
 });
- coursesRating2.map((coursesRating2) =>{
-  console.log(coursesRating2.id +" - "+ coursesRating2.title +" - "+ coursesRating2.rating)
+ let coursesRatingResult2 =  coursesRating2.map((coursesRating2) =>{
+  coursesRating2.id +" - "+ coursesRating2.title +" - "+ coursesRating2.rating
  }
+console.log(coursesRatingResult2)
  )
 // task 3
 let addedCourses = [ 
@@ -56,7 +57,7 @@ let addedCourses = [
     rating: 3.8, 
   } 
 ]; 
-let newSumArray = (courses,addedCourses) => {
+let generalCourse = (courses,addedCourses) => {
   return [...courses,...addedCourses]
 }
 console.log(newSumArray(courses,addedCourses));                                                          

@@ -143,12 +143,10 @@
     </style>
 </head>
 <body>
-<h1 style="text-align: center">Add new service of Furama</h1>
+<h1 style="text-align: center">Edit Customer</h1>
 <div class="formbold-main-wrapper">
-    <!-- Author: FormBold Team -->
-    <!-- Learn More: https://formbold.com -->
     <div class="formbold-form-wrapper">
-        <form action="https://formbold.com/s/FORM_ID" method="POST">
+        <form action="customer.html">
             <div class="formbold-input-flex">
                 <div>
                     <label for="firstname" class="formbold-form-label"> Name </label>
@@ -173,27 +171,75 @@
                     />
                 </div>
             </div>
-
+            <div class="formbold-input-flex">
+                <div>
+                    <label>Gender:</label>
+                    <div style="text-align: center" class="form-row">
+                        <div>
+                        </div>
+                        <div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="gender" id="male">
+                                <label class="form-check-label" for="male">Male</label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="gender" id="female">
+                                <label class="form-check-label" for="female">Female</label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="formbold-input-flex">
+                <div>
+                    <label for="citizen" class="formbold-form-label"> Citizen ID </label>
+                    <input
+                            type="text"
+                            name="citizen"
+                            id="citizen"
+                            placeholder="123456789"
+                            class="formbold-form-input"
+                    />
+                </div>
+            </div>
             <div>
-                <label for="message" class="formbold-form-label"> Describe </label>
+                <label for="email" class="formbold-form-label"> Email </label>
                 <textarea
                         rows="6"
-                        name="message"
-                        id="message"
-                        placeholder="Type your message"
+                        name="email"
+                        id="email"
+                        placeholder="Type your email"
                         class="formbold-form-input"
                 ></textarea>
             </div>
-            <div class="form-group">
-                <label for="thumbnailURL">Up Image:</label>
-                <input type="hidden" id="thumbnailURL" th:field="*{image}"/>
-                <input id="btnThumbnailURL" type="file" class="form-control"/>
-                <progress id="uploader" value="0" max="100">0%</progress>
+            <div>
+                <label class="formbold-form-label"> type of customer </label>
+                <select>
+                    <option>Diamond</option>
+                    <option>Platinium</option>
+                    <option>Gold</option>
+                    <option>Silver</option>
+                    <option>Member</option>
+                </select>
             </div>
+            <br>
+            <div class="formbold-input-flex">
+                <div>
+                    <label for="address" class="formbold-form-label"> Address </label>
+                    <input
+                            type="text"
+                            name="address"
+                            id="address"
+                            placeholder="123 Nguyen Van A"
+                            class="formbold-form-input"
+                    />
+                </div>
+            </div>
+            <div>
 
-            <button class="formbold-btn">
-                Send Message
-            </button>
+                <button class="formbold-btn">
+                    Send Message
+                </button>
         </form>
     </div>
 </div>

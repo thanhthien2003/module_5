@@ -144,10 +144,7 @@
 </head>
 <body>
 <div class="formbold-main-wrapper">
-    <!-- Author: FormBold Team -->
-    <!-- Learn More: https://formbold.com -->
     <div class="formbold-form-wrapper">
-        <form action="https://formbold.com/s/FORM_ID" method="POST">
             <div class="formbold-input-flex">
                 <div>
                     <label for="firstname" class="formbold-form-label"> Name </label>
@@ -185,7 +182,7 @@
             </div>
             <div class="form-group">
                 <label for="thumbnailURL">Up Image:</label>
-                <input type="hidden" id="thumbnailURL" th:field="*{image}"/>
+                <input type="hidden" id="thumbnailURL" />
                 <input id="btnThumbnailURL" type="file" class="form-control"/>
                 <progress id="uploader" value="0" max="100">0%</progress>
             </div>

@@ -122,9 +122,14 @@
                     class="fa-regular fa-pen-to-square"></i></a>
         </td>
         <td>
-            <a class="btn btn-danger"
-               data-toggle="modal"><i
-                    class="fa-regular fa-trash-can"></i></a>
+            <a>
+                <button class="btn btn-danger" title="Delete" data-bs-toggle="modal"
+                        data-bs-target="#createFacilityModal">
+                    <i
+                            class="fa-regular fa-trash-can"></i>
+                </button>
+            </a>
+
         </td>
     </tr>
     </tbody>
@@ -185,6 +190,28 @@
         </div>
     </div>
 </footer>
+<div class="modal fade" id="createFacilityModal" tabindex="-1" aria-labelledby="createFacilityModalLabel"
+     aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="createFacilityModalLabel">Create new facility</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                    <h1>Are you sure delete?</h1>
+                    <div class="form-group row">
+                        <div class="col-sm-12 text-center">
+                            <button type="submit" class="btn btn-primary-save">Save</button>
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel
+                            </button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
 <!-- end footer -->
 <!-- Javascript files-->
 <script src="js/jquery.min.js"></script>

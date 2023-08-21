@@ -30,36 +30,31 @@ function App() {
       title: "A Crypto Holiday Special: Past, Present, And Future With Material Indicators",
       slug: "a-crypto-holiday-special-past-present-and-future-with-material-indicators",
       category: "Interviews",
-    updatedAt: "2 days ago"
+      updatedAt: "2 days ago"
     }
   ];
-  
-
-
-
-
   return (
     <>
-    <table className='table' >
-      <thead className='table-dark'>
-    <tr>
-    <th>ID</th>
-    <th>TITLE</th>
-    <th>CATEGORY</th>
-    <th>TIME</th>
-    </tr>
-      </thead>
+      <table className='table' >
+        <thead className='table-dark'>
+          <tr>
+            <th>ID</th>
+            <th>TITLE</th>
+            <th>CATEGORY</th>
+            <th>TIME</th>
+          </tr>
+        </thead>
         <tbody >
-    {posts.map((value, index) => {
-      return (<tr key={index}>
-        <td>{index + 1}</td>
-        <td style={{color:'#0070C0'}}>{value.title}</td>
-        <td>{value.category}</td>
-        <td>{value.updatedAt}</td>
-    </tr>)
-    })}
+          {posts.map((value, index) => {
+            return (<tr key={index}>
+              <td>{index + 1}</td>
+              <td style={{ color: '#0070C0' }}>{value.title}</td>
+              <td>{value.category}</td>
+              <td>{value.updatedAt}</td>
+            </tr>)
+          })}
         </tbody>
-    </table>
+      </table>
     </>
   );
 }

@@ -2,11 +2,11 @@ import React from "react";
 import { useState } from "react";
 import 'bootstrap/dist/css/bootstrap.css';
 
-function ListPost() {
+function PostList() {
     const [title, setTitle] = useState("");
     const [category, setCategory] = useState("");
     const [content, setContent] = useState("");
-    const [id, setId] = useState(-1);
+    const [id, setId] = useState(0);
 
     const [list, setList] = useState(
         [
@@ -64,9 +64,50 @@ function ListPost() {
         setContent(content);
     }
 
+    const getPost = (id) => {
+        for (let i = 0; i < list.length; i++) {
+            if (list[i].id === id) {
+                setTitle(list[i].title);
+                setCategory(list[i].category);
+                setContent(list[i].content);
+                setId(id);
+            }
+        }
+    }
+
+    const createPost = () => {
+        if (title === "" || category === "" || content === "") {
+            alert("you have to input all record");
+            return;
+        }
+        const date = new Date();
+        const newPost = {
+            "id": Math.floor(Math.random() * 100) + 1,
+            "title": title,
+            "slug": title.replace(" ", "-").toLowerCase(),
+            "category": category,
+            "content": content,
+            "updatedAt": date.getDate() + "/" + (date.getMonth() + 1) + "/" + date.getFullYear(),
+        }
+        setList([...list, newPost]);
+        setTitle("");
+        setCategory("");
+        setContent("");
+    }
+    
+    const deletePost = (id) => {
+        const newList = [...list];
+        for (let i = 0; i < newList.length; i++) {
+            if (newList[i].id === id) {
+                newList.splice(i, 1);
+                break;
+            }
+        }
+        setList(newList);
+    }
 
     const editPost = () => {
-        if (id === -1) {
+        if (id === 0) {
             alert("you did not choose anything ! ")
             return;
         }
@@ -84,10 +125,9 @@ function ListPost() {
             "updatedAt": date.getDate() + "/" + (date.getMonth() + 1) + "/" + date.getFullYear(),
         }
         const newList = [...list];
-        let a = false;
+        let flag = false;
         for (let i = 0; i < newList.length; i++) {
             if (newList[i].id === id) {
-                a = true;
                 newList[i] = {
                     "id": id,
                     "title": title,
@@ -96,57 +136,15 @@ function ListPost() {
                     "content": content,
                     "updatedAt": date.getDate() + "/" + (date.getMonth() + 1) + "/" + date.getFullYear(),
                 };
-                a = true;
+                flag = true;
                 setId(-1);
             }
         }
-        if (a) {
+        if (flag) {
             setList(newList);
         } else {
             alert("can't find post");
         }
-        setTitle("");
-        setCategory("");
-        setContent("");
-    }
-
-    const deletePost = (id) => {
-        const newList = [...list];
-        for (let i = 0; i < newList.length; i++) {
-            if (newList[i].id === id) {
-                newList.splice(i, 1);
-                break;
-            }
-        }
-        setList(newList);
-    }
-
-    const getPost = (id) => {
-        for (let i = 0; i < list.length; i++) {
-            if (list[i].id === id) {
-                setTitle(list[i].title);
-                setCategory(list[i].category);
-                setContent(list[i].content);
-                setId(id);
-            }
-        }
-    }
-
-    const createPost = () => {
-        if (title === "" || category === "" || content === "") {
-            alert("you have to input everything");
-            return;
-        }
-        const date = new Date();
-        const newPost = {
-            "id": Math.floor(Math.random() * 10000),
-            "title": title,
-            "slug": title.replace(" ", "-").toLowerCase(),
-            "category": category,
-            "content": content,
-            "updatedAt": date.getDate() + "/" + (date.getMonth() + 1) + "/" + date.getFullYear(),
-        }
-        setList([...list, newPost]);
         setTitle("");
         setCategory("");
         setContent("");
@@ -174,12 +172,10 @@ function ListPost() {
                                 <button className='delete-post btn btn-danger' onClick={() => deletePost(post.id)}>Delete</button>
                             </td>
                         </tr>
-
                     )
                 })}
             </table>
             <div>
-                <form>
                     <div>
                         <label htmlFor='title'>Input title</label>
                         <br />
@@ -197,9 +193,8 @@ function ListPost() {
                     </div>
                     <button className="btn btn-primary" onClick={() => createPost()}>Add</button>
                     <button className="btn btn-primary" onClick={() => editPost()}>Edit</button>
-                </form>
             </div>
         </div>
     );
 }
-export default ListPost;
+export default PostList;

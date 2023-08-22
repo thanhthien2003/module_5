@@ -71,6 +71,7 @@ function Postlist() {
                 setCategory(list[i].category);
                 setContent(list[i].content);
                 setId(id);
+                break;
             }
         }
     }

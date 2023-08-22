@@ -35,10 +35,11 @@ let coursesRating2 = courses.filter(function(courses){
     return courses.rating < 4;
 });
  let coursesRatingResult2 =  coursesRating2.map((coursesRating2) =>{
-  coursesRating2.id +" - "+ coursesRating2.title +" - "+ coursesRating2.rating
- }
-console.log(coursesRatingResult2)
- )
+  return (
+    coursesRating2.id +" - "+ coursesRating2.title +" - "+ coursesRating2.rating
+  )
+ });
+ console.log(coursesRatingResult2);
 // task 3
 let addedCourses = [ 
   { 

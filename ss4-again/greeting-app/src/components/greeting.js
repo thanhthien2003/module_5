@@ -1,8 +1,8 @@
 const { useState, Component, useEffect } = require("react");
 
 function Greeting() {
-    const [firstName,setFirstName] = useState();
-    const [lastName,setLastName] = useState();
+    const [firstName,setFirstName] = useState("");
+    const [lastName,setLastName] = useState("");
 
     const handleFirstNameChange = (event) => {
         setFirstName(event)
@@ -12,14 +12,14 @@ function Greeting() {
     }
     
     useEffect(() => {
-
-    },[firstName,lastName])
+            console.log("ok");
+    },[firstName,lastName]);
 
     return(
         <>
-        <input value={firstName} onChange={setFirstName}/>
+        <input value={firstName} onChange={(event) => handleFirstNameChange(event.target.value)}/>
         <br/>
-        <input value={lastName} onChange={setLastName}/>
+        <input value={lastName} onChange={(event) => handleLastNameChange(event.target.value)}/>
         <br/>
         <p>
             Hello,{' '}

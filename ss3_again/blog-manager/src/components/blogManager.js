@@ -2,7 +2,7 @@ import React from "react";
 import { useState } from "react";
 import 'bootstrap/dist/css/bootstrap.css';
 
-function PostList() {
+function ListPost() {
     const [title, setTitle] = useState("");
     const [category, setCategory] = useState("");
     const [content, setContent] = useState("");
@@ -197,4 +197,4 @@ function PostList() {
         </div>
     );
 }
-export default PostList;
+export default ListPost;

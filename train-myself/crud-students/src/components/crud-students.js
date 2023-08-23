@@ -1,35 +1,13 @@
 import React from 'react';
 import { useState } from 'react';
+import { listS } from '../data/data.js'
+import Create from './create.js';
 
 function ListStudents() {
-    const [list,setList] = useState([
-        {
-            name: "thien",
-            className: "c033G1"
-        },
-        {
-            name:"Hanh",
-            className: "c012G0"
-        }
-    ]);
+    const [list,setList] = useState(listS);
     const [name,setName] = useState('');
     const [className,setClassName] = useState('');
-    const handleInputName = (event) => {
-            setName(event);
-    }
-    const handleInputClassName = (event) => {
-        setClassName(event);
-    }
-    const createStudent = () => {
-            const newStudent = {
-                name:name,
-                className:className
-            }
-            const newList = [...list,newStudent];
-            setList(newList);
-            setName('');
-            setClassName('');
-    }
+
 
     const deleteStudent = (value) => {
             const newList = [...list];
@@ -60,15 +38,11 @@ function ListStudents() {
         }
     }
 
+
     return(
         <>
         <h1>List Students</h1>
-        NAME:  <input value={name} onChange={(event) => handleInputName(event.target.value)}/>
-        <br></br>
-        CLASS: <input value={className} onChange={(event) => handleInputClassName(event.target.value)}/>
-        <br></br>
-        <button onClick={() => createStudent()}>Add</button>
-        <button onClick={() => editStudent()}>Edit</button>
+        <Create/>
         <table>
             <header>
                 <th>STT</th>

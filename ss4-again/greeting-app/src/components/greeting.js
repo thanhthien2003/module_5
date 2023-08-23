@@ -11,6 +11,11 @@ function Greeting() {
         setLastName(event)
     }
 
+    useEffect(() => {
+        window.localStorage.setItem('firstClassName', firstName);
+        window.localStorage.setItem('lastClassName', lastName);
+    }, [firstName, lastName])
+
     return (
         <>
             <input value={firstName} onChange={(event) => handleFirstNameChange(event.target.value)} />

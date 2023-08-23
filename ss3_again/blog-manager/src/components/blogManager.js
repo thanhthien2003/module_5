@@ -71,7 +71,7 @@ function Postlist() {
                 setCategory(list[i].category);
                 setContent(list[i].content);
                 setId(id);
-                break;
+                break
             }
         }
     }
@@ -95,12 +95,12 @@ function Postlist() {
         setCategory("");
         setContent("");
     }
-    
+
     const deletePost = (id) => {
         const newList = [...list];
-        for (let i = 0; i < newList.length; i++) {
-            if (newList[i].id === id) {
-                newList.splice(i, 1);
+        for (let i = 0;i<newList.length;i++) {
+            if(id===newList[i].id){
+                newList.splice(i,1);
                 break;
             }
         }
@@ -177,23 +177,23 @@ function Postlist() {
                 })}
             </table>
             <div>
-                    <div>
-                        <label htmlFor='title'>Input title</label>
-                        <br />
-                        <input id="title" name="title" value={title} onChange={(event) => handleInputTitle(event.target.value)}></input>
-                    </div>
-                    <div>
-                        <label htmlFor='category'>Input category</label>
-                        <br />
-                        <input id="category" name="category" value={category} onChange={(event) => handleInputCategory(event.target.value)}></input>
-                    </div>
-                    <div>
-                        <label htmlFor='content'>Input content</label>
-                        <br />
-                        <input id="content" name="content" value={content} onChange={(event) => handleInputContent(event.target.value)}></input>
-                    </div>
-                    <button className="btn btn-primary" onClick={() => createPost()}>Add</button>
-                    <button className="btn btn-primary" onClick={() => editPost()}>Edit</button>
+                <div>
+                    <label htmlFor='title'>Input title</label>
+                    <br />
+                    <input id="title" name="title" value={title} onChange={(event) => handleInputTitle(event.target.value)}></input>
+                </div>
+                <div>
+                    <label htmlFor='category'>Input category</label>
+                    <br />
+                    <input id="category" name="category" value={category} onChange={(event) => handleInputCategory(event.target.value)}></input>
+                </div>
+                <div>
+                    <label htmlFor='content'>Input content</label>
+                    <br />
+                    <input id="content" name="content" value={content} onChange={(event) => handleInputContent(event.target.value)}></input>
+                </div>
+                <button className="btn btn-primary" onClick={() => createPost()}>Add</button>
+                <button className="btn btn-primary" onClick={() => editPost()}>Edit</button>
             </div>
         </div>
     );

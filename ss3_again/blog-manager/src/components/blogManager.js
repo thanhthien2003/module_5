@@ -90,7 +90,8 @@ function Postlist() {
             "content": content,
             "updatedAt": date.getDate() + "/" + (date.getMonth() + 1) + "/" + date.getFullYear(),
         }
-        setList([...list, newPost]);
+        const newArray = [...list,newPost];
+        setList(newArray);
         setTitle("");
         setCategory("");
         setContent("");

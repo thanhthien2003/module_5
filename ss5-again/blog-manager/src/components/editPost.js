@@ -18,7 +18,7 @@ function EditPost(){
                 break;
             }
         }
-    },[])
+    },[param])
 
     if (getPost==null) {
         return null;

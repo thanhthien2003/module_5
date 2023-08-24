@@ -37,18 +37,30 @@ function CreatePost() {
                     >
                     {(
                             <Form>
-                            Title:  <Field type='text'  id='title' name='title'/>
+                            Title:  <Field type='text'  className='form-control' id='title' name='title'/>
                             <ErrorMessage name="title" component='span'/>
+                            <br/>
+                            <br/>
                             Slug:  <Field type='text' className='form-control' id='slug' name='slug'/>
                             <ErrorMessage name="slug" component='span' />
-                            Category:  <Field type='text' id='category' name='category'/>
+                            <br/>
+                            <br/>
+                            Category:  <Field type='text' className='form-control' id='category' name='category'/>
                             <ErrorMessage name="category" component='span' />
-                            Content:  <Field type='text'  id='content' name='content'/>
+                            <br/>
+                            <br/>
+                            Content:  <Field type='text' className='form-control'  id='content' name='content'/>
                             <ErrorMessage name="content" component='span' />
-                            Author:  <Field type='text' id='author' name='author'/>
+                            <br/>
+                            <br/>
+                            Author:  <Field type='text' className='form-control' id='author' name='author'/>
                             <ErrorMessage name="author" component='span' />
-                            Author-Email:  <Field type='email'  id='authorEmail' name='authorEmail'/>
+                            <br/>
+                            <br/>
+                            Author-Email:  <Field type='email' className='form-control'  id='authorEmail' name='authorEmail'/>
                             <ErrorMessage name="authorEmail" component='span' />
+                            <br/>
+                            <br/>
 
                             <button type='submit' className='btn btn-primary'>Submit</button>  
                             </Form>

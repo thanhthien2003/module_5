@@ -1,6 +1,6 @@
 import { useNavigate, useParams } from "react-router-dom";
 import { list } from "../data/data";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import {ErrorMessage, Field, Form, Formik} from "formik";
 import * as Yup from "yup"
 
@@ -9,13 +9,22 @@ function EditPost(){
     const navigate = useNavigate();
     const param = useParams();
     const [listPost,setListPost] = useState(list);
-    const [getPost,setGetPost] =useState({});
-    for (let i = 0; i < listPost.length; i++) {
-        if (listPost[i].id === param.id) {
-            setGetPost(listPost[i]);
-            break;
+    const [getPost,setGetPost] =useState(null);
+    
+    useEffect(() => {
+        for (let i = 0; i < listPost.length; i++) {
+            if (listPost[i].id == param.id) {
+                setGetPost(listPost[i]);
+                break;
+            }
         }
+    },[])
+
+    if (getPost==null) {
+        return null;
     }
+
+    console.log(getPost);
     return(
         <>
         <Formik 

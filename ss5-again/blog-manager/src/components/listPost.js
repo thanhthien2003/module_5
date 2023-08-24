@@ -6,7 +6,7 @@ import { Link, useNavigate } from "react-router-dom";
 import * as Yup from "yup"
 
 function ListPost() {
-    // const [id, setId] = useState(0);
+    const [id, setId] = useState(0);
     // const [title, setTitle] = useState("");
     // const [category, setCategory] = useState("");
     // const [content, setContent] = useState("");
@@ -14,7 +14,17 @@ function ListPost() {
     // const [author,setAuthor] = useState("");
     // const [authorEmail,setAuthorEmail] = useState("");
     const [listPost,setListPost] = useState(list);
-
+    const deletePost = (id) => {
+        const newList = [...list];
+        for (let i = 0; i < newList.length; i++) {
+            if(newList[i].id === id){
+                newList.splice(i,1);
+                setListPost(newList);
+                setId(0);
+                break;
+            }
+        }
+    }
     return (
         <>
         <Link to="/createPost">Go to add</Link>
@@ -40,8 +50,8 @@ function ListPost() {
                             <td>{post.author}</td>
                             <td>{post.authorEmail}</td>
                             <td>
-                                <Link  to="/editPost/?{post.id}">Edit</Link>
-                                <button className='delete-post btn btn-danger'>Delete</button>
+                                <Link  to={`/editPost/${post.id}`}>Edit</Link>
+                                <button className='delete-post btn btn-danger' onClick={() => deletePost(post.id)}>Delete</button>
                             </td>
                         </tr>
                     )

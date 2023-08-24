@@ -11,7 +11,7 @@ function App() {
       <Routes>
         <Route path='/' element={<ListPost />} />
         <Route path='/createPost' element={<CreatePost />} />
-        <Route path='/editPost' element={<EditPost />} />
+        <Route path='/editPost/:id' element={<EditPost />} />
       </Routes>
   </BrowserRouter>
   );

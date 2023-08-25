@@ -1,15 +1,15 @@
 import React, { useState } from "react";
 import { list } from "../data/data";
-import { ErrorMessage, Field, Form, Formik } from "formik";
-import { Blocks, FidgetSpinner } from "react-loader-spinner"
+// import { ErrorMessage, Field, Form, Formik } from "formik";
+// import { Blocks, FidgetSpinner } from "react-loader-spinner"
 import { Link, useNavigate } from "react-router-dom";
-import * as Yup from "yup"
-import "bootstrap/dist/css/bootstrap.css";
+// import * as Yup from "yup"
+import "bootstrap/dist/css/bootstrap.min.css";
 import { Button, Modal } from "bootstrap";
 import './modal.css';
 
 
-function ListPost() {
+export default function ListPost() {
     const [id, setId] = useState(0);
     // const [title, setTitle] = useState("");
     // const [category, setCategory] = useState("");
@@ -93,6 +93,3 @@ function ListPost() {
         </>
     )
 }
-
-
-export default ListPost;

@@ -5,16 +5,16 @@ import {ErrorMessage, Field, Form, Formik} from "formik";
 import * as Yup from "yup"
 
 
-function EditPost(){
+export default function EditPost(){
     const navigate = useNavigate();
     const param = useParams();
-    const [listPost,setListPost] = useState(list);
-    const [getPost,setGetPost] =useState(null);
+    // const [listPost,setListPost] = useState(list);
+    const [getPost,setGetPost] =useState({});
     
     useEffect(() => {
-        for (let i = 0; i < listPost.length; i++) {
-            if (listPost[i].id == param.id) {
-                setGetPost(listPost[i]);
+        for (let i = 0; i < list.length; i++) {
+            if (list[i].id == param.id) {
+                setGetPost(list[i]);
                 break;
             }
         }
@@ -32,16 +32,16 @@ function EditPost(){
 
                     validationSchema={Yup.object({
                         title: Yup.string().required("Name is not empty") ,
-                        slug: Yup.string().required("Name is not empty"),
-                        category: Yup.string().required("Name is not empty"),
-                        content: Yup.string().required("Name is not empty"),
-                        author: Yup.string().required("Name is not empty"),
-                        authorEmail: Yup.string().required("Name is not empty").email("Your email not exist")
+                        slug: Yup.string().required("Slug is not empty"),
+                        category: Yup.string().required("Category is not empty"),
+                        content: Yup.string().required("Content is not empty"),
+                        author: Yup.string().required("Author is not empty"),
+                        authorEmail: Yup.string().required("Author-email is not empty").email("Email is not in the correct format")
                     })}
                     onSubmit = {(value) => {
-                        for (let i = 0; i < listPost.length; i++) {
-                            if (listPost[i].id === value.id) {
-                                listPost[i] = {
+                        for (let i = 0; i < list.length; i++) {
+                            if (list[i].id === value.id) {
+                                list[i] = {
                                     "id": value.id,
                                     "title": value.title,
                                     "slug": value.title,
@@ -79,4 +79,3 @@ function EditPost(){
         </>
     )
 }
-export default EditPost;

@@ -18,16 +18,16 @@ function EditPost(){
                 break;
             }
         }
-    },[param])
+    },[getPost])
 
-    if (getPost==null) {
-        return null;
-    }
+  
 
     console.log(getPost);
     return(
         <>
-        <Formik 
+        {
+           getPost !== null ? 
+            <Formik 
             initialValues={getPost}
 
                     validationSchema={Yup.object({
@@ -73,7 +73,9 @@ function EditPost(){
                             <button type='submit' className='btn btn-primary'>Submit</button>  
                             </Form>
                     )}
-            </Formik>
+            </Formik> : ""
+        }
+        
         </>
     )
 }

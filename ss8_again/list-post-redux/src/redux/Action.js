@@ -1,8 +1,14 @@
-export const GET_USERS = 'GET_USERS';
-export const GET_USERS_SUCCESS = 'GET_USERS_SUCCESS';
-export const DELETE_USER = 'DELETE_USER';
-export const DELETE_USER_SUCCESS = 'DELETE_USER_SUCCESS';
-
-
-export const getUsers = () => ({ type: GET_USERS });
-export const getUsersSuccess = (users) => ({ type: GET_USERS_SUCCESS, payload: users });
+export const GET_POSTS_FETCH = "GET_POSTS_FETCH";
+export const GET_POSTS_SUCCESS = "GET_POSTS_SUCCESS";
+export const CREATE_POST = "CREATE_POST";
+export const CREATE_POST_SUCCESS = "CREATE_POST_SUCCESS";
+export const getPostsFetch = () => ({
+    type: GET_POSTS_FETCH,
+});
+export const getPostSuccess = () => ({
+    type: GET_POSTS_SUCCESS
+});
+export const createPost = (newPost) => ({
+    type: CREATE_POST,
+    payload: { newPost: newPost },
+}); 

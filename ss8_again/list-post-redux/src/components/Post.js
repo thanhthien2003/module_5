@@ -1,53 +1,59 @@
-import React from 'react';
-
-import { useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import {getUsers,deleteUser} from "../redux/Action"
-
-const User = () => {
-    const dispatch = useDispatch();
-    const users = useSelector((state) => state.users);
-
-
-    useEffect(() => {
-      dispatch(getUsers());
-    }, [dispatch]);
+import {
+  CREATE_POST_SUCCESS,
+  GET_POSTS_SUCCESS,
+  getPostSuccess
+} from "./redux/Action"
 
 
-    const handleDeleteUser = (id) => {
-      dispatch(deleteUser(id));
-    };
 
-    return (
-      <div>
-        <h1>User Management</h1>
-        <button onClick={() => dispatch(getUsers())}>Get users</button>
-        <table>
+
+const PostList = () => {
+
+  const dispatch = useDispatch();
+  const posts = useSelector((state) => state.postsReducer.getPostSuccess);
+
+  useEffect(() => {
+    dispatch(getPostSuccess());
+  }, [dispatch]);
+
+
+  return (
+    <>
+      <div className=" container my-2">
+        <div
+          className=" btn btn-outline-info mb-3">
+
+        </div>
+        <table className="post-list table table-striped ">
           <thead>
             <tr>
-              <th>ID</th>
-              <th>Name</th>
-              <th>Email</th>
-              <th>Website</th>
-              <th>Action</th>
+              <td>ID</td>
+              <td>TITLE</td>
+              <td>SLUG</td>
+              <td>CATEGORY</td>
+              <td>THUMBNAIL URL</td>
             </tr>
           </thead>
           <tbody>
-            {users.map((user) => (
-              <tr key={user.id}>
-                <td>{user.id}</td>
-                <td>{user.name}</td>
-                <td>{user.email}</td>
-                <td>{user.website}</td>
-                <td>
-                  <button onClick={() => handleDeleteUser(user.id)}>Delete</button>
-                </td>
+            {posts.map((post, index) => (
+              <tr key={index}>
+                <td>{index + 1}</td>
+                <td>{post.title}</td>
+                <td>{post.slug}</td>
+                <td>{post.category}</td>
+                <td>{post.url}</td>
               </tr>
+
             ))}
+
           </tbody>
+
         </table>
       </div>
-    );
-  };
+    </>
+  );
+}
 
-  export default User;
+export default PostList;

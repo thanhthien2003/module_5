@@ -1,23 +1,16 @@
-import * as actionTypes from './Action';
+import {
+  CREATE_POST_SUCCESS,
+  GET_POSTS_SUCCESS
+} from "./Action";
 
-const initialState = {
-  users: [],
-};
-
-const userReducer = (state = initialState, action) => {
+const postsReducer = (state = { posts: [] }, action) => {
   switch (action.type) {
-    case actionTypes.GET_USERS_SUCCESS:
-      return {
-        ...state,
-        users: action.payload,
-      };
-    case actionTypes.DELETE_USER_SUCCESS:
-      return {
-        
-      };
-    default:
-      return state;
+      case GET_POSTS_SUCCESS:
+          return { ...state, posts: action.payload.posts };
+      case CREATE_POST_SUCCESS:
+          const newPost = action.payload.newPost;
+          return { ...state, newPost };
+          return state;
   }
 };
-
-export default userReducer;
+export default postsReducer;

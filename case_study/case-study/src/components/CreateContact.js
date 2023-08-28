@@ -1,6 +1,6 @@
 import React from "react";
 
-export default function CreateContact() {
+function CreateContact() {
 
     return (
         <div>
@@ -56,3 +56,4 @@ export default function CreateContact() {
         </div>
       );
 }
+export default CreateContact;

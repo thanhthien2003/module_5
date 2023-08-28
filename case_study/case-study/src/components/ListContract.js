@@ -1,9 +1,12 @@
 import React from "react";
 import "bootstrap/dist/css/bootstrap.css";
+import Header from "./Header";
+import Footer from "./Footer";
 
-export function ListContact() {
+function ListContract() {
     return(
         <>
+        <Header />
         <table className="table table-bordered">
         <thead>
         <tr>
@@ -26,6 +29,8 @@ export function ListContact() {
     </tr>
         </tbody>
       </table>
+      <Footer/>
         </>
     )
 }
+export default ListContract;

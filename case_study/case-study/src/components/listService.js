@@ -1,7 +1,11 @@
 import React from "react";
+import Header from "./Header";
+import Footer from "./Footer";
 
 function ListService() {
     return (
+        <>
+        <Header/>
         <div className="our_room">
             <div className="container">
                 <div className="row">
@@ -21,14 +25,14 @@ function ListService() {
                                 <h3>Bed Room</h3>
                                 <p>If you are going to use a passage of Lorem Ipsum, you need to be sure there </p>
                             </div>
-                            <div className="bed_room">
-                                <a className="nav-link" href="editService.html">
+                            <div className="bed_room row">
+                                <a className="nav-link col-md-6 col-sm-6" href="editService.html">
                                     <button className="btn btn-primary">
                                         <i
                                             className="fa-regular fa-pen-to-square"></i>
                                     </button>
                                 </a>
-                                <a className="nav-link">
+                                <a className="nav-link col-md-6 col-sm-6">
                                     <button className="btn btn-danger">
                                         <i
                                             className="fa-regular fa-trash-can"></i>
@@ -46,14 +50,14 @@ function ListService() {
                                 <h3>Bed Room</h3>
                                 <p>If you are going to use a passage of Lorem Ipsum, you need to be sure there </p>
                             </div>
-                            <div className="bed_room">
-                                <a className="nav-link" href="editService.html">
+                            <div className="bed_room row">
+                                <a className="nav-link col-md-6 col-sm-6" href="editService.html">
                                     <button className="btn btn-primary">
                                         <i
                                             className="fa-regular fa-pen-to-square"></i>
                                     </button>
                                 </a>
-                                <a className="nav-link">
+                                <a className="nav-link col-md-6 col-sm-6">
                                     <button className="btn btn-danger">
                                         <i
                                             className="fa-regular fa-trash-can"></i>
@@ -71,14 +75,14 @@ function ListService() {
                                 <h3>Bed Room</h3>
                                 <p>If you are going to use a passage of Lorem Ipsum, you need to be sure there </p>
                             </div>
-                            <div className="bed_room">
-                                <a className="nav-link" href="editService.html">
+                            <div className="bed_room row">
+                                <a className="nav-link col-md-6 col-sm-6" href="editService.html">
                                     <button className="btn btn-primary">
                                         <i
                                             className="fa-regular fa-pen-to-square"></i>
                                     </button>
                                 </a>
-                                <a className="nav-link">
+                                <a className="nav-link col-md-6 col-sm-6">
                                     <button className="btn btn-danger">
                                         <i
                                             className="fa-regular fa-trash-can"></i>
@@ -96,14 +100,14 @@ function ListService() {
                                 <h3>Bed Room</h3>
                                 <p>If you are going to use a passage of Lorem Ipsum, you need to be sure there </p>
                             </div>
-                            <div className="bed_room">
-                                <a className="nav-link" href="editService.html">
+                            <div className="bed_room row">
+                                <a className="nav-link col-md-6 col-sm-6" href="editService.html">
                                     <button className="btn btn-primary">
                                         <i
                                             className="fa-regular fa-pen-to-square"></i>
                                     </button>
                                 </a>
-                                <a className="nav-link">
+                                <a className="nav-link col-md-6 col-sm-6">
                                     <button className="btn btn-danger">
                                         <i
                                             className="fa-regular fa-trash-can"></i>
@@ -121,14 +125,14 @@ function ListService() {
                                 <h3>Bed Room</h3>
                                 <p>If you are going to use a passage of Lorem Ipsum, you need to be sure there </p>
                             </div>
-                            <div className="bed_room">
-                                <a className="nav-link" href="editService.html">
+                            <div className="bed_room row">
+                                <a className="nav-link col-md-6 col-sm-6" href="editService.html">
                                     <button className="btn btn-primary">
                                         <i
                                             className="fa-regular fa-pen-to-square"></i>
                                     </button>
                                 </a>
-                                <a className="nav-link">
+                                <a className="nav-link col-md-6 col-sm-6">
                                     <button className="btn btn-danger">
                                         <i
                                             className="fa-regular fa-trash-can"></i>
@@ -146,14 +150,14 @@ function ListService() {
                                 <h3>Bed Room</h3>
                                 <p>If you are going to use a passage of Lorem Ipsum, you need to be sure there </p>
                             </div>
-                            <div className="bed_room">
-                                <a className="nav-link" href="editService.html">
+                            <div className="bed_room row">
+                                <a className="nav-link col-md-6 col-sm-6" href="editService.html">
                                     <button className="btn btn-primary">
                                         <i
                                             className="fa-regular fa-pen-to-square"></i>
                                     </button>
                                 </a>
-                                <a className="nav-link">
+                                <a className="nav-link col-md-6 col-sm-6">
                                     <button className="btn btn-danger">
                                         <i
                                             className="fa-regular fa-trash-can"></i>
@@ -165,6 +169,10 @@ function ListService() {
                 </div>
             </div>
         </div>
+        <Footer/>
+        
+        </>
+        
     )
 }
 export default ListService;

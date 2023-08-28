@@ -32,32 +32,32 @@ function Header() {
                 <div className="collapse navbar-collapse" id="navbarsExample04">
                   <ul className="navbar-nav mr-auto">
                     <li className="nav-item active">
-                      <a className="nav-link" href="home.html">
+                      <a className="nav-link" href="/">
                         Home
                       </a>
                     </li>
                     <li className="nav-item">
-                      <a className="nav-link" href="about.html">
+                      <a className="nav-link" href="/">
                         About
                       </a>
                     </li>
                     <li className="nav-item">
-                      <a className="nav-link" href="service.html">
+                      <a className="nav-link" href="/service">
                         Service
                       </a>
                     </li>
                     <li className="nav-item">
-                      <a className="nav-link" href="gallery.html">
+                      <a className="nav-link" href="/">
                         Gallery
                       </a>
                     </li>
                     <li className="nav-item">
-                      <a className="nav-link" href="createContract.html">
+                      <a className="nav-link" href="/contract">
                         Contract
                       </a>
                     </li>
                     <li className="nav-item">
-                      <a className="nav-link" href="customer.html">
+                      <a className="nav-link" href="/customer">
                         Customer
                       </a>
                     </li>

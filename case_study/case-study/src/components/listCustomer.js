@@ -1,9 +1,12 @@
 import React from "react";
 import "bootstrap/dist/css/bootstrap.css";
+import Header from "./Header";
+import Footer from "./Footer";
 
-export function ListCustomer() {
+function ListCustomer() {
     return(
         <>
+        <Header/>
         <table className="table table-bordered">
         <thead>
           <tr>
@@ -42,6 +45,8 @@ export function ListCustomer() {
           </tr>
         </tbody>
       </table>
+      <Footer/>
         </>
     )
 }
+export default  ListCustomer;

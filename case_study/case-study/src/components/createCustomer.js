@@ -1,7 +1,7 @@
 import React from "react";
 import "bootstrap/dist/css/bootstrap.css";
 
-export function CreateCustomer() {
+function CreateCustomer() {
     return (
         <>
             <div>
@@ -78,3 +78,4 @@ export function CreateCustomer() {
         </>
     )
 }
+export default CreateCustomer;

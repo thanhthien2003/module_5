@@ -1,6 +1,6 @@
 import React from "react";
 
-export function EditCustomer() {
+function EditCustomer() {
     return (
         <>
             <div>
@@ -78,3 +78,4 @@ export function EditCustomer() {
     )
 
 }
+export default EditCustomer;

@@ -9,27 +9,25 @@ export default function EditPost(){
     const navigate = useNavigate();
     const param = useParams();
     // const [listPost,setListPost] = useState(list);
-    const [getPost,setGetPost] =useState({});
+    const [post,setPost] =useState({});
     
     useEffect(() => {
         for (let i = 0; i < list.length; i++) {
             if (list[i].id == param.id) {
-                setGetPost(list[i]);
+                setPost(list[i]);
                 break;
             }
         }
-    },[getPost])
+    },[post])
 
-  
-
-    console.log(getPost);
+    if(post==null){
+        return null;
+    } 
+    console.log(post);
     return(
         <>
-        {
-           getPost !== null ? 
             <Formik 
-            initialValues={getPost}
-
+            initialValues={post}
                     validationSchema={Yup.object({
                         title: Yup.string().required("Name is not empty") ,
                         slug: Yup.string().required("Slug is not empty"),
@@ -59,23 +57,26 @@ export default function EditPost(){
                             <Form>
                             Title:  <Field type='text'  id='title' name='title'/>
                             <ErrorMessage name="title" component='span'/>
-                            Slug:  <Field type='text' className='form-control' id='slug' name='slug'/>
+                            <br/>
+                            Slug:  <Field type='text' id='slug' name='slug'/>
                             <ErrorMessage name="slug" component='span' />
+                            <br/>
                             Category:  <Field type='text' id='category' name='category'/>
                             <ErrorMessage name="category" component='span' />
+                            <br/>
                             Content:  <Field type='text'  id='content' name='content'/>
                             <ErrorMessage name="content" component='span' />
+                            <br/>
                             Author:  <Field type='text' id='author' name='author'/>
                             <ErrorMessage name="author" component='span' />
+                            <br/>
                             Author-Email:  <Field type='email'  id='authorEmail' name='authorEmail'/>
                             <ErrorMessage name="authorEmail" component='span' />
-
+                            <br/>
                             <button type='submit' className='btn btn-primary'>Submit</button>  
                             </Form>
                     )}
-            </Formik> : ""
-        }
-        
+            </Formik> 
         </>
     )
 }

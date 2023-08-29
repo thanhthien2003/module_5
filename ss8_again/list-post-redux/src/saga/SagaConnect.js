@@ -1,8 +1,8 @@
-import { put, takeEvery } from "redux-saga/effects";
+import { put, takeEvery, takeLatest } from "redux-saga/effects";
 
 
 import axios from "axios";
-import { CREATE_POST, GET_POSTS_SUCCESS } from "../redux/Action";
+import { CREATE_POST, GET_POSTS_FETCH, GET_POSTS_SUCCESS } from "../redux/Action";
 
 function* getPostSuccess() {
     try {
@@ -26,7 +26,7 @@ function* createPost(payload) {
 
 
 function* postSaga() {
-    yield takeEvery(GET_POSTS_SUCCESS, getPostSuccess);
+    yield takeLatest(GET_POSTS_FETCH, getPostSuccess);
     yield takeEvery(CREATE_POST,createPost);
 }
 

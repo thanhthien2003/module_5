@@ -6,7 +6,7 @@ import {
 const postsReducer = (state = { posts: [] }, action) => {
   switch (action.type) {
       case GET_POSTS_SUCCESS:
-            return {posts: action.posts};
+            return {posts: action.payload.posts};
       case CREATE_POST_SUCCESS:
           const newPost = action.payload.newPost;
           return { ...state, newPost };

@@ -1,24 +1,20 @@
-import logo from './logo.svg';
+import { Provider } from 'react-redux';
 import './App.css';
+import PostList from './components/Post';
+import {
+  CREATE_POST_SUCCESS,
+  GET_POSTS_SUCCESS,
+  getPostSuccess
+} from "./redux/Action.js"
+import store from './redux/Store';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+    <Provider store={store}>
+      <PostList />
+    </Provider>
+    </>
   );
 }
 

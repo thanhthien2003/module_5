@@ -1,21 +1,15 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import {
-  CREATE_POST_SUCCESS,
-  GET_POSTS_SUCCESS,
-  getPostSuccess
-} from "./redux/Action"
-
-
-
+import { getPostSuccess } from "../redux/Action";
+ 
 
 const PostList = () => {
 
   const dispatch = useDispatch();
-  const posts = useSelector((state) => state.postsReducer.getPostSuccess);
+  const posts = useSelector((store) => store.postsReducer.posts);
 
   useEffect(() => {
-    dispatch(getPostSuccess());
+    dispatch(getPostSuccess);
   }, [dispatch]);
 
 

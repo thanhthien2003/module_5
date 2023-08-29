@@ -11,4 +11,5 @@ export const getPostSuccess = () => ({
 export const createPost = (newPost) => ({
     type: CREATE_POST,
     payload: { newPost: newPost },
+
 }); 

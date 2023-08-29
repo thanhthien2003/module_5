@@ -3,11 +3,15 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import { Provider } from 'react-redux';
+import postsReducer from "./redux/Reduce"
+import { combineReducers, createStore, applyMiddleware } from "redux";
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
+const rootReducer = combineReducers({ postsReducer });
 root.render(
   <React.StrictMode>
-    <App />
+      <App />
   </React.StrictMode>
 );
 

@@ -6,6 +6,7 @@ import Home from './components/Home';
 import ListService from './components/ListService';
 import ListCustomer from './components/ListCustomer';
 import CreateContact from './components/CreateContact';
+import CreateCustomer from './components/CreateCustomer';
 function App() {
   return (
     <>
@@ -15,6 +16,7 @@ function App() {
       <Route path='/service' element={<ListService />}/>
       <Route path='/customer' element={<ListCustomer />}/>
       <Route path='/contract/create' element={<CreateContact />}/>
+      <Route path='/customer/create' element={<CreateCustomer />}/>
     </Routes>
     </>
   );

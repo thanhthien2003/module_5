@@ -2,12 +2,20 @@ import React from "react";
 import "bootstrap/dist/css/bootstrap.css";
 import Header from "./Header";
 import Footer from "./Footer";
+import buttonCreate from "../css/buttonCreate.css";
 
 function ListCustomer() {
-    return(
-        <>
-        <Header/>
-        <table className="table table-bordered">
+  return (
+    <>
+      <Header />
+      <div className="row">
+        <a href="/customer/create">
+        <button class="btn-customer">
+          Create Customer
+        </button>
+      </a>
+      </div>
+      <table className="table table-bordered">
         <thead>
           <tr>
             <th>STT</th>
@@ -45,8 +53,8 @@ function ListCustomer() {
           </tr>
         </tbody>
       </table>
-      <Footer/>
-        </>
-    )
+      <Footer />
+    </>
+  )
 }
-export default  ListCustomer;
+export default ListCustomer;

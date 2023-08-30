@@ -5,6 +5,7 @@ import ListContract from './components/ListContract'
 import Home from './components/Home';
 import ListService from './components/ListService';
 import ListCustomer from './components/ListCustomer';
+import CreateContact from './components/CreateContact';
 function App() {
   return (
     <>
@@ -13,6 +14,7 @@ function App() {
       <Route path='/contract' element={<ListContract />}/>
       <Route path='/service' element={<ListService />}/>
       <Route path='/customer' element={<ListCustomer />}/>
+      <Route path='/contract/create' element={<CreateContact />}/>
     </Routes>
     </>
   );

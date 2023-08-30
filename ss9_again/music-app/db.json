@@ -1,0 +1,40 @@
+{
+  "music": [
+    {
+      "id": 1,
+      "name": "Buồn không thể buông",
+      "type": "ballad",
+      "singer": "Trung Quan"
+    },
+    {
+      "id": 2,
+      "name": "Cô ấy của anh ấy",
+      "type": "ballad",
+      "singer": "Trung Quân"
+    },
+    {
+      "id": 3,
+      "name": "Chỉ là không cùng nhau",
+      "type": "ballad",
+      "singer": "Tăng Phúc"
+    },
+    {
+      "id": 4,
+      "name": "Kỳ vọng sai lầm",
+      "type": "ballad",
+      "singer": "Tăng Phúc"
+    },
+    {
+      "id": 5,
+      "name": "Mưa tháng sáu",
+      "type": "ballad",
+      "singer": "Văn mai Hương"
+    },
+    {
+      "name": "Ân xá",
+      "type": "Rap diss",
+      "singer": "Bray",
+      "id": 6
+    }
+  ]
+}

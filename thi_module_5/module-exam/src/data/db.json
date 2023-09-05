@@ -1,0 +1,34 @@
+{
+  "listProduct": [
+    {
+      "id":1,
+      "nameProduct":"Ao mua",
+      "dayStart":"26/09/2003",
+      "amount": 5,
+      "typeProduct":{
+        "idType":1,
+        "nameTypeProduct":"ao giu nhiet"
+      }  
+    },
+    {
+      "id":2,
+      "nameProduct":"tanktop",
+      "dayStart":"25/09/2003",
+      "amount":7,
+      "typeProduct":{
+        "idType":2,
+        "nameTypeProduct":"ao mua he"
+      }
+    }
+  ],
+  "typeProduct": [
+    {
+      "idType": 1,
+      "nameTypeProduct":"ao giu nhiet"
+    },
+    {
+      "idType":2,
+      "nameTypeProduct":"ao mua he"
+    }
+  ]
+}

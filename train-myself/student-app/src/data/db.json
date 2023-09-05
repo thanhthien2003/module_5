@@ -1,0 +1,38 @@
+{
+  "students": [
+    {
+      "id": 1,
+      "name": "Cao",
+      "classes": {
+        "id": 1,
+        "nameClass": "C0123"
+      }
+    },
+    {
+      "id": 2,
+      "name": "Thien",
+      "classes": {
+        "id": 2,
+        "nameClass": "C0223"
+      }
+    },
+    {
+      "name": "awdawd",
+      "classes": {
+        "id": 2,
+        "nameClass": "C0123323"
+      },
+      "id": 3
+    }
+  ],
+  "classes": [
+    {
+      "id": 1,
+      "nameClass": "C0123"
+    },
+    {
+      "id": 2,
+      "nameClass": "C0123323"
+    }
+  ]
+}

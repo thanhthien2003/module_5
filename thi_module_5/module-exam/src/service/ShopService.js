@@ -26,6 +26,7 @@ export const editProduct = async (idProduct,product) => {
 }
 export const createProduct = async (product) => {
     try {
+        console.log(product);
         return (await axios.post("http://localhost:8080/api/products",product));
     } catch (error) {
         return error

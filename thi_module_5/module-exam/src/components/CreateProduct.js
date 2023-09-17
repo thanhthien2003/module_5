@@ -19,17 +19,17 @@ function CreateProduct() {
     }, [])
 
     const handleCreate = async (product) => {
-        await createProduct(product); 
+        await createProduct(product);
     }
 
     return (
         <>
             <Formik
                 initialValues={{
-                    nameProduct:'',
-                    dayStart:'',
-                    amount:'',
-                    productType:{}
+                    nameProduct: '',
+                    dayStart: '',
+                    amount: '',
+                    typeOfProduct: {}
                 }}
                 validationSchema={Yup.object({
                     nameProduct: Yup.string().required("You can not require this field!"),
@@ -38,10 +38,10 @@ function CreateProduct() {
                 })}
 
                 onSubmit={async (value) => {
-                 
-                     value={...value,productType:json.parse(value.productType)} ;
-                    console.log(value);
-                    await handleCreate(value);
+                    console.log(value.typeOfProduct);
+                    const newValue = { ...value, typeOfProduct: JSON.stringify(value.typeOfProduct) };
+                    // console.log(newValue);
+                    await handleCreate(newValue);
                     navigate('/');
                 }}
             >
@@ -50,29 +50,27 @@ function CreateProduct() {
                     <Field type="text" className="form-control" name="nameProduct" id="name" />
                     <br></br>
                     <ErrorMessage component="span" name="nameProduct" />
-                    
-                    <br/>
+
+                    <br />
                     <label htmlFor="dayStart"> DayStart: </label>
                     <Field type="text" className="form-control" name="dayStart" id="dayStart" />
                     <br></br>
                     <ErrorMessage component="span" name="dayStart" />
-                    <br/>
+                    <br />
                     <label htmlFor="amount">Amount : </label>
                     <Field type="number" className="form-control" name="amount" id="amount" />
                     <br></br>
                     <ErrorMessage component="span" name="nameProduct" />
-                    <br/>
+                    <br />
                     <label htmlFor="typeOfProduct"> Type of product:</label>
                     <Field as="select" className="form-control" name="typeOfProduct">
                         {typeOfProductList.map((p) => (
-                            <>
-                                <option key={p.idType} value={JSON.stringify(p)}>{p.nameType}</option>
-                            </>
+                            <option key={p.idType} defaultValue={p.}>{p.nameType}</option>
                         ))}
                     </Field>
                     <br></br>
-                    <ErrorMessage component="span" name="typeOfProduct" />
-                    <br/>
+                    {/* <ErrorMessage component="span" name="typeOfProduct" /> */}
+                    <br />
                     <button type="submit" className="btn btn-primary">Submit</button>
                 </Form>
             </Formik>
